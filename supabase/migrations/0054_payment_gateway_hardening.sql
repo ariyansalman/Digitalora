@@ -1,0 +1,11 @@
+-- 0054_payment_gateway_hardening.sql
+-- Payment verification hardening.
+--
+-- Application-level changes in this release:
+--   * Crypto Pay direct-pay approvals now use approve_deposit_atomic(),
+--     which does not credit wallet balance when order_intent is present.
+--   * TRC20 verification selects a transfer whose recipient is the
+--     configured merchant address instead of accepting the first USDT event.
+--   * LTC verification no longer permits a 2% merchant underpayment.
+--
+-- No destructive schema change is required.

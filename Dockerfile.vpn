@@ -1,0 +1,4 @@
+FROM linuxserver/wireguard:latest
+
+# WireGuard config is passed via environment variable
+# The container will auto-configure on startup
